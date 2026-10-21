@@ -1,0 +1,5 @@
+the flow :
+1 controller
+2 model attribute
+3 thymeleaf template - displays the value of the attribute
+Why is this useful? Later, your controller can pass a customer's name, a list of transactions, or a monthly balance to the page without hardcoding that information into the HTML.

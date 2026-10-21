@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FinanceManager</title>
+</head>
+<body>
+    <h1 th:text="${title}">Finance Manager</h1>
+    <p th:text="${message}">Welcome message</p>
+    <h2>Categories</h2>
+
+    <ul>
+        <li th:each="category : ${categories}"
+            th:text="${category.name + ' - ' + category.type}">
+        </li>
+    </ul>
+<!--    <h2>Categories</h2> creates a heading.-->
+<!--    <ul> creates a bulleted list.-->
+<!--        th:each="category : ${categories}" loops through every category passed by your controller.-->
+<!--        th:text="${category.name + ' - ' + category.type}" displays each category's name and type, such as Salary - INCOME.-->
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Category</title>
+</head>
+<body>
+<h1>Create Category</h1>
+
+<form th:action="@{/categories}" th:object="${category}" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" required>
+
+    <label for="type">Type:</label>
+    <select id="type" th:field="*{type}" required>
+        <option value="">Choose a type</option>
+        <option th:each="type : ${categoryTypes}"
+                th:value="${type}"
+                th:text="${type}">
+        </option>
+    </select>
+
+    <button type="submit">Save Category</button>
+</form>
+
+<a th:href="@{/}">Back to Home</a>
+</body>
+</html>
+
+<!--th:object="${category}" connects the form to the empty Category object.-->
+
+
+
+<!--th:field="*{name}" binds the input to category.name.-->
+
+
+
+<!--th:field="*{type}" binds the dropdown to category.type.-->
+
+
+
+<!--method="post" sends the submitted data to the server.-->
+
+
+
+<!--th:action="@{/categories}" means Spring needs a POST /categories route to process the form.-->
